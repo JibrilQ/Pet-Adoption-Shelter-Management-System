@@ -1,0 +1,66 @@
+<%# static webpage %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Pet Adoption & Shelter Management</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body class="about-page-reference">
+    
+    <%- include('reuseable/header') %>
+
+    <main class="container">
+        <section class="about-section">
+            <h1>About this project </h1>
+            <p>This platform connects animal shelters with people looking to adopt.</p>
+            <p>It allows shelters to publish pets available for adoption, manage applications, and track each stage of the adoption process, whilst adopters can browse animals, learn more about them, and submit a request to adopt.</p>
+        </section>
+
+        <section class="features-section">
+            <article class="features">
+                <figure class="icon"> 👤 </figure>
+                <h3> For Adopters </h3>
+                <ul>
+                    <li> Browse all available pets in real time. </li>
+                    <li> View hand-crafted pet listings with descriptions and pictures. </li>
+                    <li> Submit adoption applications quickly and easily. </li>
+                    <li> Track all your applications in a dedicated webpage </li>
+                </ul>
+            </article>
+
+            <article class="features">
+                <figure class="icon"> 🏡 </figure>
+                <h3> For Shelters </h3>
+                <ul>
+                    <li> List pets easily with description and photo upload capabilities </li>
+                    <li> Manage pet status (Active v Adopted) </li>
+                    <li> Review incoming applications (Approve v Decline) </li>
+                </ul>
+            </article>
+
+            <article class="features">
+                <figure class="icon"> 🌍 </figure>
+                <h3> For Everyone </h3>
+
+                <ul>
+                    <li> Browse all available pets in realtime (Limited in capability) </li>
+                    <li> Create an account as either a Shelter or Adopter </li>
+                    <li> Secure and transparent communication line </li>
+                </ul>
+            </article>
+
+        </section>
+
+
+        <section class="my-mission">
+            <h2> Our Mission </h2>
+            <p>Our goal is to expedite the process of pet adoption, making it as transparent and as efficient as possible by giving both adopters and shelters the tools necessary for such a process.</p>
+        </section>
+    </main>
+
+    <%- include('reuseable/footer') %>
+</body>
+</html>

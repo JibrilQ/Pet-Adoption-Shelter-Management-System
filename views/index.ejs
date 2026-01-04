@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home — Pet Adoption and Shelter Management</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    
+    <%- include('reuseable/header') %>
+
+    <main id="main" class="container">
+        <section class="hero">
+            <section class="hero-text">
+                <h1>Find your new best friend today!</h1>
+                <p>Browse pets available for adoption from shelters near you. Connecting loving homes with animals in need.</p>
+                <a href="/login" class="button">Get Started</a>
+            </section>
+        </section>
+
+        <section id="latest-arrivals" class="latest-arrivals">
+            <h2>Latest Arrivals</h2>
+            <p>Here are a just a couple of animals currently looking for a loving home!</p>
+
+            <section class="pet-card-list" aria-label="Latest Arrivals">
+                
+                <% if (pets.length === 0) { %>
+                    <p>No pets currently available. Please check back later!</p>
+                <% } %>
+
+                <% pets.forEach(pet => { %>
+                    <article class="pet-card">
+                        
+                        <p class="pet-status"><%= pet.status %></p>
+                        
+                        <img src="<%= pet.photo %>" alt="<%= pet.name %> the <%= pet.species %>"> <%# dynamic images %>
+                        
+                        <h3><%= pet.name %></h3>
+                        
+                        <p class="pet-meta">
+                            <%= pet.species %> 
+                            <% if (pet.breed) { %> -- <%= pet.breed %> <% } %>
+                            -- <%= pet.age %> -- <%= pet.size %>
+                        </p>
+
+                        <p class="pet-meta">
+                            Listed by: <%= pet.shelter_name %>
+                        </p>
+
+                        <p class="pet-summary">
+                            <%= pet.description.substring(0, 100) %>...
+                        </p>
+
+                        <p class="pet-tags">
+                            <% if (pet.temperament) { %>
+                                <% pet.temperament.split(',').forEach(tag => { %>
+                                    <span class="tag"><%= tag.trim() %></span>
+                                <% }) %>
+                            <% } %>
+                        </p>
+
+                        <a href="/pets/<%= pet.id %>" class="button secondary">View details</a>
+                    </article>
+                <% }) %>
+                </section>
+
+            <section class="view-all-wrapper">
+                <a href="/pets" class="button secondary">View all available pets</a>
+            </section>
+
+        </section>
+    </main>
+
+    <%- include('reuseable/footer') %>
+</body>
+</html>

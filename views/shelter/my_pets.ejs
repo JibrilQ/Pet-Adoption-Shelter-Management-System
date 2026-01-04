@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Pets</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <%- include ('../reuseable/header') %>
+    <main class="container">
+        <header>
+            <h1> Currently Listed Pets </h1>
+            <a href="/shelter/pet/new" class="button secondary"> List a New Pet! </a>
+        </header>
+
+        <%# message upon redirect back to dashboard %>
+        <% if (locals.message) { %>
+            <p> <%= message %> </p>
+       <% } %>
+
+       <section class="pets-grid">
+            <% if (pets.length === 0) { %>
+                <p> You havent listed any pets yet </p>
+
+            <%} %>
+
+            <% pets.forEach(pet => { %>
+                <article class="pet-management-card">
+                    <figure>
+                        <img src="<%= pet.photo %>" alt="<%= pet.name %>">
+
+                        <figcaption>
+                            <h3> <%= pet.name %> </h3>
+                        </figcaption>
+                    </figure>
+
+                    <section>
+                        <p> <strong> Listed : </strong> 2025 </p>
+                        <p> <strong> Status : </strong> <%= pet.status %> </p>
+                    </section>
+
+                    <nav>
+                        <a href="/pets/<%= pet.id %>" class="button secondary"> View Details </a>
+                        <form action="/shelter/pets/<%= pet.id %>/toggle" method="POST">
+                            <button type="submit" class="button secondary">
+                                <% if (pet.status === 'active') {%>
+                                    Mark Adopted
+                                <%}
+                                else {%>
+                                    Relist
+                                <%} %>
+                            </button>
+                        </form>
+                    </nav>
+                </article>
+
+            <%}) %>
+       </section>
+    </main>
+
+    <%- include('../reuseable/footer') %>
+</body>
+</html>

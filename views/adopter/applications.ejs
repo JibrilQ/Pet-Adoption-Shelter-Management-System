@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications - Adopter</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <%- include('../reuseable/header') %>
+    <main class="container">
+        <h1> My Adoption Applications </h1>
+
+        <%# Upon success %>
+        <% if (locals.submitted) { %>
+            <p role="alert"> <strong> Success! </strong> Your application has been sent to the shelter! </p>
+
+        <%} %>
+
+        <section class="apps-grid">
+            <% if (applications.length === 0) { %>
+                <p> You havent applied for any pets yet. <a href="/pets"> Browse Pets </a></p>
+            <%} %>
+
+            <%# Loops through applications %>
+            <% applications.forEach(app => { %>
+                <article class="app-card">
+                    <header>
+                        <section>
+                            <h3>
+                                <a href="/pets/<%= app.pet_id %>"><%= app.pet_name %></a>
+                            </h3>
+                            <small> Shelter : <%= app.shelter_name %></small>
+                        </section>
+
+                        <span class="status-badge">
+                            <%= app.status %>
+                        </span>
+                    </header>
+
+                    <section class="app-details">
+                        <p> <strong> Applied on : </strong> 2025 </p>
+
+                        <% if (app.status === 'approved') { %>
+                            <p> <strong> Next steps : </strong> The shelter will contact you shortly </p>
+
+                        <%} 
+                        else if (app.status === 'declined') { %>
+                            <p> <strong> This application was not successful </strong> </p>
+
+                        <%} 
+                        else {%>
+                            <p> Waiting for Shelter... </p>
+                        <%} %>
+                    </section>
+                </article>
+            
+            <% }) %>
+        </section>
+    </main>
+    <%- include('../reuseable/footer') %>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for <%= pet.name %></title>
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+</head>
+<body>
+    <%- include('../reuseable/header') %>
+    <main class="container">
+        <article class ="application-card">
+            <figure class="pet-picture">
+                <img src="<%= pet.photo %>" alt="<%= pet.name %>">
+                <figcaption class="src">
+                    Photo of <%= pet.name %>
+                </figcaption>
+            </figure>
+
+            <section class="application-start">
+                <header>
+                <h2> Applying for <%= pet.name %> </h2>
+                <p class="shelter-info"> Listing by <%= pet.shelter_name %> </p>
+                </header>
+                <section class="applicant-details">
+                    <p>
+                        <strong> Applicant : </strong> <%= user.name %> <br>
+                        <span class="email"> <%= user.email %> </span>
+                    </p>
+                </section>
+
+                <hr>
+                <form action="/pets/<%= pet.id %>/apply" method="POST">
+                    <fieldset class="form-group">
+                        <label for="home_setup"> 
+                            1. Describe your home environment (i.e. smoke free, kids, garden or suitable walkspace) : 
+                        </label>
+                        <textarea id="home_setup" name="home_setup" required> </textarea>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="prior_pets">
+                            2. Do you have prior experience in owning pets? Please describe your level of experience below : </label>
+                        <textarea id="prior_pets" name="prior_pets" required> </textarea>
+                    </fieldset>
+
+                    <nav class="button-group">
+                        <button type="submit" class="button secondary"> Submit Application </button>
+                        <a href="/pets/<%= pet.id %>" class="cancel-link"> Cancel </a>
+                    </nav>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <%- include('../reuseable/footer') %>
+
+</body>
+</html>

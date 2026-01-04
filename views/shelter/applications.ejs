@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+
+</head>
+<body>
+    <%- include ('../reuseable/header') %>
+    <main class="container">
+        <h1> Recieved Applications </h1>
+
+        <section class="apps-grid">
+            <% if (applications.length === 0) { %>
+                    <p> No applications have been listed. </p>
+
+            <% } %>
+
+            <% applications.forEach(app => { %>
+                <article class="app-card">
+                    <header>
+                        <section>
+                            <h3> <%= app.pet_name %> </h3>
+                            <small> <%= app.pet_species %> </small>
+                        </section>
+                        <p> <%= app.status %> </p>
+                    </header>
+
+                    <section>
+                        <p> <strong> Applicant : </strong> <%= app.adopter_name %> </p>
+                        <p> <%= app.adopter_email %> </p>
+
+                        <details>
+                            <summary> View Answers </summary>
+                            <dl class="hidden">
+                                <dt> <strong> Home : </strong> </dt>
+                                <dd> <%= app.home_setup %> </dd>
+
+                                <dt> <strong> History </strong> </dt>
+                                <dd> <%= app.prior_pets %> </dd>
+                            </dl>
+                        </details>
+                    </section>
+
+                    <nav>
+                        <% if (app.status === 'submitted' || app.status === 'under_review') { %>
+                            <section>
+                                <form action="/application/<%=app.id %>/update" method="POST">
+                                    <input type="hidden" name="status" value="approved">
+                                    <button type="submit" class="button secondary"> Approve </button>
+                                </form>
+
+                                <form action="/application/<%=app.id %>/update" method="POST">
+                                    <input type="hidden" name="status" value="declined">
+                                    <button type="submit" class="button secondary"> Decline </button>
+                                </form>
+                            </section>
+                        <%}
+
+                        else { %> <p> <em> Decision Made! </em> </p> <%} %>
+
+                    </nav>
+                </article>
+
+            <% }) %>
+        </section>
+    </main>
+
+    <%- include('../reuseable/footer') %>
+
+</body>
+</html>

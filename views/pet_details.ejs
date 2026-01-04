@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pet.name %> - Pet Details</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <%- include('reuseable/header') %>
+
+    <main class="container">
+        <nav aria-label="Breadcrumb" class="Breadcrumb-nav">
+            <a href="/pets" class="button secondary"> Back to all pets </a>
+        </nav>
+
+        <article class="pet-detail-grid">
+            <figure class="pet-detail-image">
+                <img src="<%=pet.photo %>" alt="<%=pet.name %>">
+            </figure>
+
+            <section class="pet-detail-info">
+                <h1><%= pet.name %></h1>
+
+                <p class="pet-status"><%= pet.status %> </p>
+
+                <section class="stats-group">
+                    <span class="detail-row"> <strong> Species : </strong> <%= pet.species %> </span>
+                    <% if (pet.breed) { %>
+                        <span class="detail-row"> <strong> Breed : </strong> <%= pet.breed %></span> <%# optional %>
+                    <%} %>
+                    <span class="detail-row"> <strong> Age : </strong> <%= pet.age %></span>
+                    <span class="detail-row"> <strong> Size : </strong> <%= pet.size %></span>
+                </section>
+
+                <section class="description">
+                    <h3> About <%= pet.name %> </h3>
+                    <p> <%= pet.description %> </p>
+                </section>
+
+                <aside class="shelter-box">
+                    <h3> Listed by : <%= pet.shelter_name || 'Shelter' %> </h3>
+
+                    <% if (locals.applicationStatus === 'submitted' || locals.applicationStatus === 'under_review') { %>
+                        <p role="alert" class="warning-box"> <strong> Application Pending : </strong> Contact details hidden for now </p>
+                        <%} else {%>
+                            <address>
+                                <p>📱 <%= pet.shelter_phone || 'No phone listed' %></p> <%# fallback option %>
+                                <p>📨 <%= pet.shelter_email || 'No email listed' %></p>
+                            </address>
+                        <%} %>
+                    
+                    <section class="action-buttons">
+                        <% if (user && user.role === 'adopter') { %>
+                            <% if (locals.applicationStatus) {%>
+                                <button class="button"> Status : <%= locals.applicationStatus %> </button> 
+                            <% } else { %>
+                                    <a href="/pets/<%= pet.id %>/apply" class="button secondary"> Apply to Adopt ! </a>
+                            <%} %>
+                        <% } else if (!user) { %>
+                            <a href="/login" class="button secondary"> Login to Apply!</a>
+                        <% } %>
+                    </section>
+                </aside>
+            </section>
+        </article>
+    </main>
+    <%- include('reuseable/footer') %>
+
+</body>
+</html>

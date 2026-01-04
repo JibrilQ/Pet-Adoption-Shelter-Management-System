@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse All Pets - Pet Adoption & Shelter Agency</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+
+</head>
+<body>
+    <%- include ('reuseable/header') %>
+
+    <main class="container">
+        <section class="featured-pets">
+            <h1> All available Pets 🐱</h1>
+            <p> 🐾 Browse our catalogue of furry friends looking for a home! 🐾 </p>
+
+            <section class="pet-card-list">
+                <% if (pets.length === 0) { %>
+                    <p> No pets currently available </p>
+                <%} %>
+
+                <%# Loop through all pets from the server %>
+                <% pets.forEach(pet => { %>
+                    <article class="pet-card">
+                        <p class="pet-status"><%= pet.status %></p>
+                        <img src="<%= pet.photo %>" alt="<%= pet.name %>">
+                        <h3><%=pet.name %></h3>
+
+                        <p class="pet-meta">
+                            <%= pet.species %> | <%=pet.age %> | <%= pet.size %>
+                        </p>
+
+                        <p class="pet-meta shelter-credit">
+                            Listed by : <%= pet.shelter_name %>
+                        </p>
+
+                        <p class="pet-summary">
+                            <%= pet.description.substring(0,200) %>...
+                        </p>
+
+                        <a href="/pets/<%=pet.id %>" class="button secondary"> View Details </a>
+                    </article>
+
+                
+                <% }) %>
+            </section>
+        </section>
+    </main>
+
+    <%- include('reuseable/footer') %>
+</body>
+</html>

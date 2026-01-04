@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List a new pet</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <%- include('../reuseable/header') %>
+
+    <main class="container">
+        <section class="login-card">
+            <h2> List a new pet! </h2>
+            <%# Server rejects upload %>
+            <% if (locals.error) {%>
+                <p role="alert"> <%= error %> </p>         
+            
+            <%} %>
+
+            <form action="/shelter/pet/new" method="POST" enctype="multipart/form-data">
+                <label for="name"> Pet Name </label>
+                <input type="text" id="name" name="name" required>
+
+                <section>
+                    <p>
+                        <label for="species"> Species (e.g. cat) </label>
+                        <input type="text" id="species" name="species" required>
+                    </p>
+                    <p>
+                        <label for="breed"> Breed </label>
+                        <input type="text" id="breed" name="breed">
+                    </p>
+                </section>
+
+                <section>
+                    <p>
+                        <label for="age"> Age </label>
+                        <input type="text" id="age" name="age" required>
+                    </p>
+
+                    <p>
+                        <label for="size"> Size </label>
+                        <select id="size" name="size" required>
+                            <option value="small"> Small  </option>
+
+                            <option value="medium"> Medium </option>
+                            <option value="large"> Large </option>
+                        </select>
+                    </p>
+                </section>
+
+                <label for="temperament"> Temperament </label>
+                <input type="text" id="temperament" name="temperament" required>
+
+                <label for="photo"> Upload Photo Here </label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <label for="description"> Description </label>
+                <textarea id="description" name="description" required></textarea>
+
+                <button type="submit" class="button"> List a Pet </button>
+
+                <nav>
+                    <a href="/shelter/pets" class="cancel-link"> Cancel </a>
+                </nav>
+            </form>
+        </section>
+    </main>
+
+    <%- include('../reuseable/footer') %>
+
+</body>
+</html>

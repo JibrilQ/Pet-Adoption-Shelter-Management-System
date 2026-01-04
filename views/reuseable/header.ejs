@@ -1,0 +1,30 @@
+<header class="container">
+    <h1>Pet Adoption & Shelter Management</h1>
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+            <% if (user) { %>
+                <% if (user.role === 'shelter') { %>
+                    <li><a href="/shelter/pets">Pet Listings</a></li>
+                    <li><a href="/shelter/applications">Applications</a></li>
+                    <li><a href="/shelter/profile">Profile</a></li>
+                <% } %>
+
+                <% if (user.role === 'adopter') { %>
+                    <li><a href="/adopter/profile">My Profile</a></li>
+                    <li><a href="/adopter/applications">My Applications</a></li>
+                <% } %>
+
+                <li><a href="/logout" class="button-link">Logout</a></li>
+
+            <% } else { %>
+                
+                <li><a href="/login" class="button-link">Login</a></li>
+                
+            <% } %>
+            </ul>
+    </nav>
+</header>

@@ -1,0 +1,1255 @@
+/* GLOBAL CSS */
+body {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  color: #333;
+  background-color: #e9cce9e1;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+.container header {
+  margin-bottom: 32px;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #000000;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+nav ul{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  padding: 5px;
+  white-space: nowrap;
+  align-items: center;
+}
+
+nav a{
+  text-decoration: none; /* removes underlining*/
+  color: inherit;
+  border-radius: 5px;
+  padding: 10px 10px;
+  position: relative;
+  transition: all 0.2s ease;
+  color: rgb(1, 11, 59);
+
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+main{
+  padding: 50px 0px;
+}
+
+
+/* HERO SECTION */
+.hero{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/cat_hero_image.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 150px 20px;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.hero-text{
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  color: white;
+}
+
+.hero-text h1{
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.hero-text p{
+  margin: 0 0 25px;
+  font-size: 20px;
+  opacity: .95;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(22, 189, 250, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero .button {
+  background-color: rgba(0, 72, 255, 0.4);
+  color: white;
+  padding: 15px 40px;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 50px; /*pill shape */
+  /* ERROR FIXED: Removed duplicate 'box-shadow:' */
+  box-shadow: 0 5px 15px rgba(22, 189, 250, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.hero .button:hover{
+    transform: translateY(-5px);
+    background-color: rgba(22, 189, 250, 0.4);
+    box-shadow: 0 5px 20px rgba(22, 189, 250, 0.4);
+}
+
+/* BUTTON */
+
+.button{
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 50px;
+  padding: 14px 30px;
+  border: 1px solid;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 2, 6, 0.4);
+}
+
+.button:active{
+  box-shadow:  0 5px 10px rgba(0, 72, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+.button.secondary {
+  background: white;
+  color: darkgray;
+  border: 5px solid darkgray;
+  box-shadow:  0 5px 10px rgba(0, 72, 255, 0.4);
+}
+
+.button.secondary:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  color: black;
+}
+
+/* HEADER AND FOOTER */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+}
+
+header h1{
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  color: #041a47;
+}
+
+footer {
+  margin-top: 48px;
+  padding: 24px 0 32px;
+  text-align: center;           
+  font-size: 14px;         
+  color: #555;               
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
+
+nav ul li a.button-link {
+  background-color: black;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+nav ul li a.button-link:hover {
+  filter: none;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* CSS FOR ABOUT PAGE */
+
+.about-page-reference main {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding-bottom: 65px;
+}
+
+.about-section {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto 50px auto;
+}
+
+.about-section h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.about-section p {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*CHANGE IF NEED */
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.features {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  border: 1px solid;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.features:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.features h3 {
+  margin: 0 0 20px 0;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.icon {
+  text-align: center;
+  font-size: 30px;
+}
+
+.features ul {
+  list-style: square; 
+  padding : 0;
+  margin: 0;
+}
+
+.features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  /* ERROR FIXED: Added 'px' */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.my-mission {
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+  background-color: darkgray;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+
+.my-mission h2 {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.my-mission p {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+
+
+
+/* CSS FOR Latest listed pets IN HOMEPAGE */
+
+/* Latest arrivals layout */
+.latest-arrivals {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+
+/* PET LISTING // ALL AVAILABLE PETS STYLING */
+.pet-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px; 
+  padding-top: 32px;
+}
+
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  padding: 16px; 
+  border-radius: 14px;
+  box-shadow: 0 2px 5px rgba(52, 12, 12, 0.1);
+}
+
+.featured-pets {
+  padding: 40px;
+  border-radius: 14px;
+  margin-bottom: 45px;
+  text-align: center;
+  border: 1px solid;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+}
+
+.featured-pets h1 {
+  /* ERROR FIXED: 'blackdiamond' is not a valid color. Changed to 'black'. */
+  color: black;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.featured-pets p {
+  font-size: 16px;
+}
+
+.pet-card .button {
+  margin-top: auto;
+}
+
+/* Images scale to card width */
+.pet-card img {
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  border-radius: 50px;
+  object-fit: cover;
+  top: 16px;
+  right: 16px;
+  color: whitesmoke;
+  background-color: #000000;
+  padding: 4px 4px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  z-index: 2;
+}
+
+.pet-card h3 {
+  font-size: 25px;
+  color: #17294f;
+  margin: 22px 22px 10px 22px;
+}
+
+.pet-meta {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0 2px 10px 20px;
+}
+
+
+/* Status badge */
+.pet-status {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #00ff3c;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* Tags */
+.pet-tags {
+  margin: 8px 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #eee;
+  padding: 4px 8px; 
+  margin-right: 5px; 
+  border-radius: 4px;
+  font-size: 13px; 
+}
+
+/* View all pets styling <-- homepage */
+.view-all-wrapper {
+  margin-top: 48px;   /* more space above */
+  display: block;
+  width: 100%;
+  color: #fffdfd;
+  padding: 0px; 
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 18px; 
+  font-weight: 600; 
+  text-decoration: none;
+}
+
+.view-all-wrapper .button.secondary {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding: 14px 30px;
+  display: block;
+
+}
+
+
+/*CSS FOR CONTACT PAGE */ 
+/* append in future, make consistent with other pages)
+
+/* Background image, blurred and with a soft pink overlay*/
+body.contact-page {
+  position: relative;
+  background-color: #fbe7e7; /* fallback pink */
+  overflow-x: hidden;
+}
+
+/*holds the image, blur, overlay*/
+body.contact-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(
+      rgba(233, 204, 233, 0.88),
+      rgba(160, 144, 160, 0.88)
+    ),
+    url("/images/pink_house.jpg"); /*background image*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);          /* slight blur for readability */
+  transform: scale(1.03);
+  z-index: -1;
+}
+
+/* Layout around the contact panel */
+.contact-main {
+  margin-top: 40px;
+  margin-bottom: 64px;
+  padding: 0 15px;
+}
+
+/* contact panel, vibrant eye-cating gradient */
+.contact-hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 176, 230, 0.95),
+    rgba(193, 131, 162, 0.88)
+  );
+  border-radius: 10px;
+  padding: 32px;
+  color: #ffffff;
+  display: flex;
+  gap: 32px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+/* Left hand side (contact information) */
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  margin-top: 0;
+}
+
+.contact-intro {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  color: #000000;
+}
+
+/* Contact details with icons */
+.contact-detail {
+  margin-bottom: 20px;
+}
+
+.contact-detail h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-detail p {
+  margin: 0;
+  font-size: 14px;
+  color: #000000;
+}
+
+/* Circular emoji icons */
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #e9cce9e1; /* pink accent */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Right hand side (form card, white to easily differentiate) */
+.contact-form-card {
+  flex: 1;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #bab4b4;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Submit form button */
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background: #4a8fff;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/*dark blue gradient when hover */
+.contact-form button:hover {
+    background: #3276e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+/*glass style login page */
+
+/* centers login card on the screen */
+.login-page main {
+  min-height: 620px;              /* height for center */
+  padding: 40px 15px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* glassy effect */
+
+.login-card {
+  max-width: 420px;
+  width: 100%;
+  padding: 28px 26px 22px;
+
+  /* glass settings — THIS IS THE GOOD ONE */
+  background-color: rgba(255, 255, 255, 0.25); /* semi-transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* glass shadow*/
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* heading and intro */
+.login-card h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+.login-intro {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+}
+
+/* labels and inputs */
+.login-card label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"],
+.login-card input[type="text"],
+.login-card select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #cfcfcf;
+  border-radius: 999px;      /* pill */
+  margin-bottom: 14px;
+  font-size: 14px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* blue accent when input (sleek, professional design) */
+.login-card input:focus,
+.login-card select:focus {
+  outline: none;
+  border-color: #4a8fff;
+  box-shadow: 0px 0px 0px 2px rgba(74, 143, 255, 0.35);
+}
+
+/* remember and forgot row (login) */
+.login-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.login-row label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.login-row a {
+  color: #3180ff;
+  text-decoration: none;
+}
+
+.login-row a:hover {
+  text-decoration: underline;
+}
+
+/* role selector */
+.role-select {
+  border: 1px solid #e2e2e2;
+  padding: 10px 15px 10px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.role-select legend {
+  font-weight: 700;
+  padding: 0 5px;
+  font-size: 15px;
+}
+
+.role-select label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-weight: normal;
+}
+
+/* pill style buttons */
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    background: #4a8fff;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    }
+
+.login-card button:hover {
+  background: #3276e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* bottom text styling */
+.register-link {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+  color: #666666;
+}
+
+/* more professional looking*/
+.register-link a {
+  color: #444444;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+
+.login-card {
+    padding: 22px 18px 18px;
+    border-radius: 18px;
+  }
+
+
+/* SPECIFIC PET DETAILS STYLING */
+
+.pet-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal colums || image || info */
+  gap: 45px;
+  /* ERROR FIXED: 'margin-top' cannot take two values. Changed to 'margin' for centering. */
+  margin: 30px auto;
+  align-items: stretch; 
+}
+
+.pet-detail-image {
+  height: 100%;
+  min-height: 500px;
+  margin: 0;
+}
+
+.pet-detail-image img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pet-detail-info {
+  background: white;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+.pet-detail-info h1 {
+  font-size: 45px;
+  margin: 0 0 15px 0;
+  line-height: 1.2;
+}
+
+
+
+
+.pet-detail-info .pet-status {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: grey;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.stats-group {
+  color: grey;
+  padding: 8px 16px;
+  gap: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detail-row {
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+}
+
+.description p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 100%;
+  color: black;
+}
+
+.shelter-box h3 {
+  margin-top: 0;
+  font-size: 15px;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid;
+}
+
+.shelter-box address {
+  font-style: normal;
+  margin-bottom: 25px;
+}
+
+.shelter-box address p {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-buttons .button {
+  display: block;
+  text-align: center;
+  padding: 18px;
+  margin-top: 60px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+/* SHELTER ALL PETS LISTED DASHBOARD */
+
+.pet-management-card img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* circle look (sleek & modern */
+    flex-shrink: 0;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* two equal colums of pets */
+  gap: 16px;
+  margin-top: 30px;
+  align-items: start; /* prevent image streching */
+}
+
+.pet-management-card {
+    flex-shrink: 0;
+    background: white;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.pet-management-card:hover {
+  border-color: whitesmoke;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.pet-management-card section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 25px;
+  border-left: 1px solid;
+}
+
+.pet-management-card nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+  padding-right: 20px;
+}
+
+.pet-management-card .button {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  
+}
+
+/* APPLY FOR A PET STYLING */
+
+.application-card {
+  display: grid;
+  grid-template-columns: 350px 1fr; /* 40% for the image, 60% for the form */
+  margin: 40px auto; /*centers card*/
+  max-width: 1000px;
+  height: 100%;
+  background: white;
+  border: 1px solid darkgray;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px black;
+  overflow: hidden;
+}
+
+/* RIGHT HAND SIDE OF APPLICATION */
+
+.application-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.application-start header h2 {
+  margin-top: 0;
+  font-size: 25px;
+  color: #041a47;
+  margin-bottom: 10px;
+}
+
+.application-start .shelter-info {
+  color: #000000;
+  margin-top: 0;
+  font-size: 15px;
+}
+
+.applicant-details {
+  background-color: #fbe7e7;
+  color: rgb(28, 3, 28);
+  font-size: 15px;
+  padding: 15px;
+  margin: 25px 0;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.fieldset.form-group {
+  border: none;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 0 25px 0;
+}
+
+.applicant-start label {
+  display: block;
+  font-weight: 650;
+  font-size: 15px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  color: darkgray;
+}
+
+.application-start textarea {
+  width: 100%;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 15px;
+  font-size: 15px;
+  resize: vertical;
+  padding: 14px;
+  box-sizing: border-box;
+  transition: border-color 0,2s, box-shadow 0.2s;
+  gap: 15px;
+}
+
+/* ERROR FIXED: Spelled 'textarea' correctly */
+.application-start textarea:focus {
+  outline: none;
+  border-color: #00ff3c;
+  box-shadow:  0 0 0 4px whitesmoke;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.cancel-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #718096;
+  text-decoration: none;
+}
+
+.cancel-link:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+
+/* LEFT HAND SIDE OF APPLICATION */
+
+.pet-picture {
+  margin: 0;
+  height: 100%;
+  position: relative;
+  border-right: 1px solid black;
+}
+
+.pet-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.src {
+  display: none; /* hides alt text <-- keeps it for screen reader */
+}
+
+
+/* VIEW APPLICATIONS CSS */
+
+.apps-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.app-card:hover {
+  border-color: whitesmoke;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+}
+
+.app-card header {
+  border-bottom: 1px solid;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.app-card header {
+  margin-bottom: 25px;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.app-card header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: black;
+}
+
+.app-card header h3 a {
+  text-decoration: none;
+  color: black;
+}
+
+.app-card header h3 a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+.app-card header p, .status-badge {
+  font-size: 15px;
+  font-weight: 700;
+  color: darkgrey;
+  padding: 6px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.app-card section p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+.app-card details {
+  margin-top: 15px;
+  background-color: whitesmoke;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.app-card dl.hidden {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid;
+}
+
+.app-card dt {
+  margin-top: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+.app-card dd {
+  margin: 5px 0 10px 0;
+  font-size: 15px;
+  color: black;
+}
+
+.app-card summary {
+  cursor: pointer;
+  outline: none;
+}
+
+.app-card summary:hover {
+  text-decoration: underline;
+}
+
+.app-card nav section {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* PROFILE FOR ADOPTER AND SHELTER STYLING */
+
+.profile-card {
+  background: white;
+  max-width: 500px;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 25px; /* rounds out corners */
+  border: 1px solid;
+  text-align: center; /* aligns card to center of screen */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid;
+  margin:  0;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: plum;
+}
+
+.profile-card header h2 {
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.profile-card header p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 15px ;
+  margin: 0;
+}
+.profile-card hr {
+  display: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My profile - Adopter</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <%- include('../reuseable/header') %>
+    <main class="container">
+        <h1> My Profile </h1>
+
+        <section class="profile-card">
+            <header>
+                <figure> 👤</figure>
+                <h2> <%= user.name %> </h2>
+                <p> <%= user.role %> </p>
+            </header>
+
+            <section class="profile-information">
+                <p> <strong> Username : </strong> <%= user.username %> </p>
+                <p> <strong> Email : </strong> <%= user.email %> </p>
+                <p> <strong> Member Since </strong> 2025 </p>
+                <% if (user.phone) { %>
+                    <p><strong> Phone </strong> <%= user.phone %> </p>
+                
+                <%}%>
+                
+                <% if (user.city) {%>
+                    <p> <strong> Location : </strong> <%= user.city %> </p>
+                <%} %>
+            </section>
+
+            <nav>
+                <a href="/adopter/applications" class="button secondary"> View my Applications </a>
+            </nav>
+        </section>
+    </main>
+    <%- include('../reuseable/footer') %>
+
+</body>
+</html>
